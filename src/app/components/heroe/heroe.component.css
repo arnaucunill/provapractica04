@@ -5,5 +5,5 @@
 
 /* Amb aquesta classe puc escriure en una mateixa línia, sense que faci un salt de línia */
 .mateixalinia{
-    display: inline !important;
+    display: inline;
 }
