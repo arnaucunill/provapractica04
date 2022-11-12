@@ -70,6 +70,10 @@ export class HeroeComponent implements OnInit {
   ];
 
   nombreDetalle: any;
+  bioDetalle: any;
+  imgDetalle: any;
+  aparicionDetalle: any;
+  casaDetalle: any;
 
   constructor(private route: ActivatedRoute) {}
 
@@ -77,8 +81,13 @@ export class HeroeComponent implements OnInit {
     this.id = this.route.snapshot.paramMap.get('id');
 
     for (let i = 0; i < this.heroes.length; i++) {
-      if (this.id == this.heroes[i].id){
+      if (this.id == this.heroes[i].id || this.heroes[i].nombre.toLowerCase().indexOf(this.id.toLowerCase()) >= 0){
         this.nombreDetalle = this.heroes[i].nombre;
+        this.bioDetalle = this.heroes[i].bio;
+        this.imgDetalle = this.heroes[i].img;
+        this.aparicionDetalle = this.heroes[i].aparicion;
+        this.casaDetalle = this.heroes[i].casa;
+
       }
 
     };

@@ -1,0 +1,38 @@
+<div class="row mt-5">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <div *ngIf="resultat == false">
+            <h3 class="centrat">No se ha encontrado ningún héroe</h3>
+            <div style="text-align: center">
+                <img src="/assets/img/error.gif" class="mt-5 mb-5">
+            </div>
+            <div class="d-grid gap-2 col-4 mx-auto mt-2">
+                <button type="button" [routerLink]="['/heroes']" class="btn btn-outline-danger mb-3">Regresar</button>
+            </div>
+        </div>
+        <div *ngIf="resultat == true">
+            <h3>Resultado:</h3>
+            <hr>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div *ngFor="let array of arrayBuscar">
+                    <div *ngFor="let heroes of heroes" class="col">
+                        <div *ngIf="array == heroes.id">
+                            <div class="card n-100">
+                                <img [src]="heroes.img" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{heroes.nombre}}</h5>
+                                    <p class="card-text">{{heroes.bio}}</p>
+                                    <p class="card-text"><small class="text-muted">{{heroes.aparicion}}</small></p>
+                                <div class="d-grid gap-2 col-12 mx-auto">
+                                    <button type="button" [routerLink]="['/heroe', heroes.id]" class="btn btn-outline-primary">Ver más</button>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>

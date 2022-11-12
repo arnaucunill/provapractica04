@@ -1,8 +1,3 @@
-/* Amb aquesta classe poso el nom en majúscules */
-.mayus{
-    text-transform: uppercase;
-}
-
 /* Amb aquesta classe puc escriure en una mateixa línia, sense que faci un salt de línia */
 .mateixalinia{
     display: inline;
